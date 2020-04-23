@@ -94,7 +94,13 @@ Backend Features
 Prerequisite
 =============
 
-https://www.opensource-socialnetwork.org/wiki/view/706/how-to-install-open-source-social-network
+## Install LAMP
+> LAMP (Linux, Apache, MySQL, PHP)
+Install Apache
+```
+sudo apt install apache2
+sudo service apache2 restart
+```
 
 Directory Permissions
 ============
