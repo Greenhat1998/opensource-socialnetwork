@@ -1,4 +1,4 @@
-Open Source Social Network [5.3 -DEV LTS]
+Open Source Social Network
 ======================================
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=102)](https://www.opensource-socialnetwork.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://www.opensource-socialnetwork.org/)
@@ -97,6 +97,27 @@ sudo apt -y install libapache2-mod-php7.2
 sudo apt -y install php7.2-mysql
 sudo apt install php-pear php7.2-curl php7.2-dev php7.2-gd php7.2-mbstring php7.2-zip php7.2-mysql php7.2-xml
 ```
+## Create database
+```
+sudo mysql -u root -p
+create user 'ossn'@'localhost' identified by 'password';
+create database ossn;
+mysql> GRANT ALL PRIVILEGES ON ossn.* TO 'ossn'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
+```
+## Source code
+```
+sudo apt install -y git
+git clone https://github.com/Greenhat1998/opensource-socialnetwork
+```
+Copy all file into /var/www/html (with root permission)
+```
+chgrp www-data /var/www/html
+chmod g+w /var/www/html
+a2enmod rewrite
+service apache2 restart
+```
+## Config
+Access http://localhost/installation to config you website
 DEMO
 ====
 http://demo.opensource-socialnetwork.org/
