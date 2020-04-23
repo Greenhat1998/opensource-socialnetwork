@@ -8,34 +8,6 @@ Open Source Social Network [5.3 -DEV LTS]
 
 Opensource-Socialnetwork (OSSN) is a social networking software written in PHP. It allows you to make a social networking website and helps your members build social relationships, with people who share similar professional or personal interests. It is available in 16 international languages.
 
-OSSN Licensed under the ***Open Source Social Network License (4.0) / Cryptographic Autonomy License version 1.0***
-
-Kernighan & Ritchie (K&R Variant 1TBS) indentation standard is used for the OSSN.
-
-- Copyright (C) 2014-2020 SYED ARSALAN HUSSAIN SHAH <arsalan@buddyexpress.net>,
-- Copyright (C) 2014-2020 OPEN SOURCE SOCIAL NETWORK <https://www.opensource-socialnetwork.org>,
-- Copyright (C) 2015-2020 SOFTLAB24 LTD <https://www.softlab24.com>
-- Copyright (C) 2014-2015 INFORMATIKON TECHNOLOGIES <https://www.informatikon.com>
-
-Languages
-==========
-* English
-* German
-* French
-* Romanian
-* Portuguese
-* Turkish
-* Spanish
-* Italian
-* Russian
-* Dutch
-* Hebrew
-* Greek
-* Esperanto 
-* Japanese
-* Indonesian
-* Traditional Chinese
-
 Front-End Features
 ===================
 * User Registration
@@ -91,17 +63,6 @@ Backend Features
 * Manually validate unvalidated users
 * and much more components settings
 
-Prerequisite
-=============
-
-## Install LAMP
-> LAMP (Linux, Apache, MySQL, PHP)
-Install Apache
-```
-sudo apt install apache2
-sudo service apache2 restart
-```
-
 Directory Permissions
 ============
 OSSN must be installed into a directory writable by the webserver, or it will not function properly. For most Linux servers running Apache v2, making the parent directory writable is very simple:
@@ -115,22 +76,27 @@ If you are not running Apache v2 or are using a different type of webserver, you
 
 Installation
 ============
-https://www.opensource-socialnetwork.org/wiki/view/706/how-to-install-open-source-social-network
 
-- Web Installer https://www.opensource-socialnetwork.org/download
-- VM Image - https://www.opensource-socialnetwork.org/download-vm-image
-
-Installation on Ubuntu x64 18.04 LTS (Experimental) 
+## Install LAMP
+> LAMP (Linux, Apache, MySQL, PHP) >
+1. Install Apache
 ```
-sudo add-apt-repository ppa:arsalanshah/opensource-socialnetwork
-sudo apt-get update
-sudo apt-get install opensource-socialnetwork
+sudo apt install apache2
+sudo service apache2 restart
+```
+2. Install MySQL
+```
+sudo apt -y install mysql-server mysql-client
+sudo mysql -u root
+sudo mysql_secure_installation
+```
+3. Install PHP
+```
+sudo apt -y install php7.2
+sudo apt -y install libapache2-mod-php7.2
+sudo apt -y install php7.2-mysql
+sudo apt install php-pear php7.2-curl php7.2-dev php7.2-gd php7.2-mbstring php7.2-zip php7.2-mysql php7.2-xml
 ```
 DEMO
 ====
 http://demo.opensource-socialnetwork.org/
-
-UPGRADE
-========
-https://www.opensource-socialnetwork.org/wiki/view/708/how-to-upgrade-ossn
-
