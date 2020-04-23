@@ -63,17 +63,6 @@ Backend Features
 * Manually validate unvalidated users
 * and much more components settings
 
-Directory Permissions
-============
-OSSN must be installed into a directory writable by the webserver, or it will not function properly. For most Linux servers running Apache v2, making the parent directory writable is very simple:
-
-```
-chgrp www-data /path/to/ossn_parent_directory
-chmod g+w /path/to/ossn_parent_directory
-``` 
-
-If you are not running Apache v2 or are using a different type of webserver, you'll need to read your system's documentation or speak to your server administrator before proceeding.
-
 Installation
 ============
 
@@ -109,15 +98,19 @@ mysql> GRANT ALL PRIVILEGES ON ossn.* TO 'ossn'@'localhost' IDENTIFIED BY 'passw
 sudo apt install -y git
 git clone https://github.com/Greenhat1998/opensource-socialnetwork
 ```
-Copy all file into /var/www/html (with root permission)
+Copy all file into /var/www/html (with root permission) and create ossn_data folder
 ```
+mkdir /var/www/ossn_data
 chgrp www-data /var/www/html
+chgrp www-data /var/www/ossn_data
 chmod g+w /var/www/html
+chmod g+w /var/www/ossn_data
 a2enmod rewrite
 service apache2 restart
 ```
 ## Config
 Access http://localhost/installation to config you website
+
 DEMO
 ====
 http://demo.opensource-socialnetwork.org/
